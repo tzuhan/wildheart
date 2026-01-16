@@ -75,14 +75,16 @@
     "red": "Most Urgent",
     "orange": "Needs Immediate Support",
     "yellow": "Ongoing Support Needed",
-    "green": "Healthy",
+    "green": "Stable",
+    "blue": "Well Resourced",
     "gray": "Unknown Status",
     "unknown": "Unknown Status",
-    "redDesc": "Funding gap more than 70%",
-    "orangeDesc": "Funding gap between 30-70%",
-    "yellowDesc": "Funding gap between 10-30%",
-    "greenDesc": "Funding gap less than 10%",
-    "grayDesc": "Status Unknown"
+    "redDesc": "Annual fundraising under 1 million NTD",
+    "orangeDesc": "Annual fundraising between 1-3 million NTD",
+    "yellowDesc": "Annual fundraising between 3-6 million NTD",
+    "greenDesc": "Annual fundraising between 6-15 million NTD",
+    "blueDesc": "Annual fundraising over 15 million NTD",
+    "grayDesc": "Annual fundraising status unknown"
   },
   "category": {
     "Wildlife Rescue": "Wildlife Rescue",
@@ -137,7 +139,7 @@
     "privacyFirst": "Privacy-first:",
     "privacyFirstText": "Your activity stays on your device. We don't track who you are or how much you donate.",
     "creatorTitle": "About the Creator",
-    "creatorName": "CoderDraw",
+    "creatorName": "Han",
     "creatorIntro": "Hi, I’m Han, the creator of Wildlife Bulletin.\n\nI built this website after noticing, through posts on Threads, that many people who are willing to support wildlife conservation care deeply about understanding the fundraising status and needs of different organizations.\n\nThrough this platform, I hope to organize and present fundraising information from various wildlife conservation groups, so that those who want to take action can direct their donations to the teams that need support the most and align best with their own values.\n\nMy goal is to make donation information more transparent, helping people support wildlife conservation in a clearer, easier, and more reassuring way.",
     "followMe": "Follow me on Instagram",
     "followThreads": "Follow me on Threads"

@@ -40,7 +40,7 @@ export function HighlightCard({
             className="bg-white rounded-xl shadow-sm border border-gray-100 p-4 hover:shadow-md transition-shadow cursor-pointer h-full flex flex-col"
         >
             <div className="flex justify-between items-start mb-2">
-                <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-100 text-emerald-800 capitalize">
+                <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-[#84934A] text-emerald-800 capitalize">
                     {highlight.category}
                 </span>
                 <span className="text-xs text-gray-500">{formattedDate}</span>

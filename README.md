@@ -14,3 +14,6 @@ This project is licensed under the MIT License.
 
 歡迎透過此 [Google 表單](https://docs.google.com/forms/d/e/1FAIpQLSdMLif96qT409dSQo_1ix3cR5pe7-1LxTEwHaV1u6GFAyO6zQ/viewform?usp=dialog) 提供意見與建議。
 
+## 授權條款
+
+本專案採用 [MIT 授權條款](./LICENSE) 進行授權。

@@ -15,8 +15,8 @@ export function UrgencyRankingList({ rankedOrganizations, sortMethod = "urgency"
     const t = useTranslations();
     const locale = useLocale() as Locale;
 
-    // Take top 15 organizations (already sorted based on current sort method)
-    const topOrgs = rankedOrganizations.slice(0, 15);
+    // Show all organizations (already sorted based on current sort method)
+    const topOrgs = rankedOrganizations;
 
     // Get the appropriate title based on sort method
     const getTitleKey = () => {
@@ -41,7 +41,7 @@ export function UrgencyRankingList({ rankedOrganizations, sortMethod = "urgency"
                         <div className="flex items-center gap-2 min-w-0 flex-1">
                             <span className={`
                                 flex items-center justify-center w-6 h-6 rounded-full text-xs font-bold flex-shrink-0
-                                ${index < 3 ? 'bg-emerald-100 text-emerald-700' : 'bg-gray-100 text-gray-600'}
+                                ${index < 3 ? 'bg-[#84934A] text-[#ECECEC]' : 'bg-gray-100 text-gray-600'}
                             `}>
                                 {index + 1}
                             </span>

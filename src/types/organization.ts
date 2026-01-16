@@ -10,7 +10,7 @@ export type OrganizationCategory =
 
 export type UrgencyLevel = 1 | 2 | 3 | 4 | 5;
 
-export type OrganizationStatus = "red" | "orange" | "yellow" | "green" | "gray";
+export type OrganizationStatus = "red" | "orange" | "yellow" | "green" | "blue" | "gray";
 
 export interface Organization {
   id: string;

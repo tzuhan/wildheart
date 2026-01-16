@@ -75,14 +75,16 @@
     "red": "最緊急",
     "orange": "急需支持",
     "yellow": "持續需要支持",
-    "green": "運作良好",
+    "green": "運作穩定",
+    "blue": "資源充足",
     "gray": "狀態未知",
     "unknown": "狀態未知",
-    "redDesc": "資金缺口超過 70%",
-    "orangeDesc": "資金缺口介於 30-70%",
-    "yellowDesc": "資金缺口介於 10-30%",
-    "greenDesc": "資金缺口低於 10%",
-    "grayDesc": "資金缺口狀態未知"
+    "redDesc": "去年年度募款金額小於100萬",
+    "orangeDesc": "去年年度募款金額介於100-300萬",
+    "yellowDesc": "去年年度募款金額介於300-600萬",
+    "greenDesc": "去年年度募款金額介於600萬-1500萬",
+    "blueDesc": "去年年度募款金額超過1500萬以上",
+    "grayDesc": "去年年度募款金額狀態未知"
   },
   "category": {
     "Wildlife Rescue": "野生動物救援",
@@ -137,7 +139,7 @@
     "privacyFirst": "隱私優先：",
     "privacyFirstText": "不追蹤個人身分、不蒐集捐款金額，所有紀錄僅存在您的裝置中。",
     "creatorTitle": "關於創作者",
-    "creatorName": "寇德",
+    "creatorName": "Han",
     "creatorIntro": "嗨，我是 Han，「野保報報」的創作者。\n\n會建立這個網站，是因為我在 Threads 發文後發現，許多願意支持野生動物保育的朋友，其實很在意、也很想了解各個協會目前的募款狀況與需求。\n\n因此，我希望透過這個平台，整理並呈現各野保團體的募款資訊，讓願意付出行動的人，能夠依照不同協會的實際需求與自身理念，將善款送到最需要、也最認同的團隊手中。\n\n我的目標，是讓捐款資訊更透明，讓支持野保變得更清楚、更容易，也更安心。",
     "followMe": "在 Instagram 追蹤我",
     "followThreads": "在 Threads 追蹤我"

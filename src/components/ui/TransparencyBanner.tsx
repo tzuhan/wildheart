@@ -25,7 +25,7 @@ export function TransparencyBanner() {
             {t("message")}
           </p>
           <Link
-            href="/transparency"
+            href="/about"
             className="text-sm font-medium text-blue-700 hover:text-blue-600 underline mt-1 inline-block"
           >
             {t("readMore")}

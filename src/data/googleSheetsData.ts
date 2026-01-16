@@ -11,7 +11,7 @@
  *          category, region_zh, region_en, urgencyLevel,
  *          organizationURL, snsURL, donationURL, shopURL, status, recentYear,
  *          recentYearDonationReportURL, donationAmount, imageURL, donationStartDate,
- *          donationEndDate, invoiceDonationCode, lastUpdateAt
+ *          donationEndDate, invoiceDonationCode, lastUpdateAt, comment
  *
  * Sheet: "fundraisingData"
  * Columns: organizationId, year, targetAmount, raisedAmount, activityNameZh, activityNameEn, fundActivityURL
@@ -83,6 +83,7 @@ interface OrganizationRow extends Record<string, string> {
   donationEndDate: string;
   invoiceDonationCode: string;
   lastUpdateAt: string;
+  comment: string;
 }
 
 interface FundraisingDataRow extends Record<string, string> {
@@ -143,6 +144,7 @@ export async function fetchOrganizations(): Promise<Organization[]> {
     websiteUrl: row.organizationURL || undefined,
     snsUrl: row.snsURL || undefined,
     shopUrl: row.shopURL || undefined,
+    comment: row.comment || undefined,
   }));
 }
 

@@ -71,7 +71,7 @@ export default function OrganizationDetailClient({
   const handleGoToDonation = () => {
     handleDonationClick(organization.id);
     window.open(organization.donationUrl, "_blank", "noopener,noreferrer");
-    setShowConfirmModal(true);
+    // Temporarily disabled: setShowConfirmModal(true);
   };
 
   const handleConfirmSupport = () => {
@@ -110,17 +110,17 @@ export default function OrganizationDetailClient({
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header */}
         <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-8 mb-6">
-          <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-6">
-            <div className="flex items-start gap-4">
+          <div className="flex flex-wrap items-start justify-between gap-4 mb-6">
+            <div className="flex items-start gap-4 min-w-0">
               {organization.imageUrl && (
                 <img
                   src={organization.imageUrl}
                   alt={getLocalizedName(organization, locale)}
-                  className="w-16 h-16 object-contain rounded-lg flex-shrink-0"
+                  className="w-24 h-16 object-contain rounded-lg flex-shrink-0"
                 />
               )}
-              <div>
-                <div className="flex items-center gap-2 mb-2">
+              <div className="min-w-0">
+                <div className="flex flex-wrap items-center gap-2 mb-2">
                   <h1 className="text-3xl font-bold text-gray-900">
                     {getLocalizedName(organization, locale)}
                   </h1>
@@ -129,11 +129,11 @@ export default function OrganizationDetailClient({
                       href={organization.snsUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center w-8 h-8 bg-blue-600 hover:bg-blue-700 text-white rounded-full transition-colors"
+                      className="inline-flex items-center justify-center w-8 h-8 bg-blue-600 hover:bg-blue-700 text-white rounded-full transition-colors flex-shrink-0"
                       title="Facebook"
                     >
                       <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
                       </svg>
                     </a>
                   )}
@@ -141,7 +141,9 @@ export default function OrganizationDetailClient({
                 <p className="text-gray-500">{getLocalizedRegion(organization, locale)}</p>
               </div>
             </div>
-            <StatusBadge status={organization.status} size="lg" />
+            <div className="flex-shrink-0 whitespace-nowrap">
+              <StatusBadge status={organization.status} size="lg" />
+            </div>
           </div>
 
           <div className="flex flex-wrap gap-2 mb-6">
@@ -247,7 +249,7 @@ export default function OrganizationDetailClient({
                 {donationWindow.isOpen && organization.donationUrl && (
                   <button
                     onClick={handleGoToDonation}
-                    className="px-6 py-3 bg-emerald-600 text-white rounded-lg text-base font-semibold hover:bg-emerald-700 transition-colors shadow-sm"
+                    className="px-6 py-3 bg-[#84934A] text-white rounded-lg text-base font-semibold hover:bg-[#68a062] transition-colors shadow-sm"
                   >
                     {t("common.goToDonationPage")}
                   </button>
@@ -339,21 +341,21 @@ export default function OrganizationDetailClient({
                     <h3 className="text-lg font-medium text-gray-800">
                       {t("organization.donationYear", { year: donation.year })} {t("organization.donationIncome")}
                     </h3>
-                    
+
                     {donation.reportUrl && (
-                    <div className="mt-3">
-                      <a
-                        href={donation.reportUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-sm text-blue-600 hover:text-blue-700 inline-flex items-center gap-1"
-                      >
-                        {t("organization.viewReport")}
-                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                        </svg>
-                      </a>
-                    </div>
+                      <div className="mt-3">
+                        <a
+                          href={donation.reportUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-sm text-blue-600 hover:text-blue-700 inline-flex items-center gap-1"
+                        >
+                          {t("organization.viewReport")}
+                          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                          </svg>
+                        </a>
+                      </div>
                     )}
                   </div>
 

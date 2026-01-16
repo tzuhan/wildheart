@@ -65,32 +65,32 @@ export function OrganizationCard({
         <p className="text-gray-600 text-sm mb-4 line-clamp-2">
           {getLocalizedDescription(organization, locale)}
         </p>
-          {/* Donation - 一般捐款 */}
-            {organization.donation && (
-              <div className="mb-6">
-                <div className="flex items-center justify-between text-md">
-                  <span className="font-medium text-blue-700 bg-blue-50 px-2 py-0.5 rounded inline-flex items-center gap-2">
-                    {t("organization.donationYear", { year: organization.donation.year })} {t("organization.donationIncome")}
-                    {organization.donation.reportUrl && (
-                      <a
-                        href={organization.donation.reportUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-blue-600 hover:text-blue-800 inline-flex items-center"
-                        title={t("organization.viewReport")}
-                      >
-                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                        </svg>
-                      </a>
-                    )}
-                  </span>
-                  <span className="font-medium text-blue-900">
-                    {formatCurrency(organization.donation.amount)}
-                  </span>
-                </div>
-              </div>
-            )}
+        {/* Donation - 一般捐款 */}
+        {organization.donation && (
+          <div className="mb-6">
+            <div className="flex items-center justify-between text-md">
+              <span className="font-medium text-blue-700 bg-blue-50 px-2 py-0.5 rounded inline-flex items-center gap-2">
+                {t("organization.donationYear", { year: organization.donation.year })} {t("organization.donationIncome")}
+                {organization.donation.reportUrl && (
+                  <a
+                    href={organization.donation.reportUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 hover:text-blue-800 inline-flex items-center"
+                    title={t("organization.viewReport")}
+                  >
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </a>
+                )}
+              </span>
+              <span className="font-medium text-blue-900">
+                {formatCurrency(organization.donation.amount)}
+              </span>
+            </div>
+          </div>
+        )}
 
         {/* Income Display */}
         {(isCurrentYearFundraising || organization.donation) && (
@@ -131,7 +131,7 @@ export function OrganizationCard({
           {organization.donationUrl && (
             <button
               onClick={handleDonationClick}
-              className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
+              className="bg-[#84934A] text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
             >
               {t("common.goToDonationPage")}
             </button>
