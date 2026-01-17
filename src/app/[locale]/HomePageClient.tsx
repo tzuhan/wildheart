@@ -8,6 +8,7 @@ import { useGamification } from "@/contexts/GamificationContext";
 import type { OrganizationStatus, OrganizationCategory, Locale, RankedOrganization } from "@/types";
 import type { Highlight } from "@/types/highlight";
 import { getLocalizedName, getLocalizedDescription } from "@/types";
+import { sanitizeSearchInput } from "@/lib/security";
 
 const statusFilters: OrganizationStatus[] = ["red", "orange", "yellow", "green"];
 
@@ -126,7 +127,8 @@ export default function HomePageClient({
                     id="search"
                     placeholder={t("home.searchPlaceholder")}
                     value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
+                    onChange={(e) => setSearchQuery(sanitizeSearchInput(e.target.value))}
+                    maxLength={100}
                     className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
                   />
                 </div>

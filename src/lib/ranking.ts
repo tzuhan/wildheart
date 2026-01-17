@@ -73,7 +73,9 @@ export function getStatusLabel(status: OrganizationStatus): string {
     case "yellow":
       return "Ongoing Support Needed";
     case "green":
-      return "Healthy";
+      return "Stable";
+    case "blue":
+      return "Well Resourced";
     case "gray":
       return "Unknown Status";
   }
@@ -82,15 +84,17 @@ export function getStatusLabel(status: OrganizationStatus): string {
 export function getStatusDescription(status: OrganizationStatus): string {
   switch (status) {
     case "red":
-      return "Funding gap more than 70%";
+      return "Annual fundraising under 1 million NTD";
     case "orange":
-      return "Funding gap between 30-70%";
+      return "Annual fundraising between 1-3 million NTD";
     case "yellow":
-      return "Funding gap between 10-30%";
+      return "Annual fundraising between 3-6 million NTD";
     case "green":
-      return "Funding gap less than 10%";
+      return "Annual fundraising between 6-15 million NTD";
+    case "blue":
+      return "Annual fundraising over 15 million NTD";
     case "gray":
-      return "Status unknown";
+      return "Annual fundraising status unknown";
   }
 }
 
