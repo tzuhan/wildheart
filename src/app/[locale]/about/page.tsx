@@ -3,9 +3,9 @@ import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 
 export const metadata: Metadata = {
-  title: "About - Wildlife Conservation Hub",
+  title: "About - WildHeart Bulletin",
   description:
-    "Learn about Wildlife Conservation Hub and our mission to connect donors with wildlife organizations in need.",
+    "Learn about WildHeart Bulletin and our mission to connect donors with wildlife organizations in need.",
 };
 
 export default function AboutPage() {
@@ -13,6 +13,7 @@ export default function AboutPage() {
   const tCommon = useTranslations("common");
   const tCategory = useTranslations("category");
   const tTransparency = useTranslations("transparency");
+  const tStatus = useTranslations("status");
 
   return (
     <div className="min-h-screen bg-gray-50 py-12">
@@ -29,11 +30,13 @@ export default function AboutPage() {
                 {t("creatorTitle")}
               </h2>
               <div className="flex flex-col md:flex-row gap-6 items-start">
-                {/* Avatar placeholder */}
+                {/* Avatar */}
                 <div className="flex-shrink-0">
-                  <div className="w-24 h-24 rounded-full bg-gradient-to-br from-emerald-400 to-emerald-600 flex items-center justify-center text-white text-3xl font-bold shadow-lg">
-                    TH
-                  </div>
+                  <img
+                    src="/profile.jpg"
+                    alt="Han"
+                    className="w-24 h-24 rounded-full object-cover shadow-lg"
+                  />
                 </div>
                 <div className="flex-1">
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">
@@ -142,41 +145,46 @@ export default function AboutPage() {
               </div>
             </section>
 
-            {/* Urgency ranking explanation - hidden
-            <section className="mb-8">
-              <h2 className="text-xl font-semibold text-gray-900 mb-4">
-                {tTransparency("howRankings")}
-              </h2>
-              <p className="text-gray-700 leading-relaxed mb-4">
-                {tTransparency("howRankingsText")}
-              </p>
-              <p className="text-gray-700 leading-relaxed mb-4">
-                {tTransparency("urgencyDetermined")}
-              </p>
-              <ul className="list-disc pl-6 text-gray-700 space-y-2">
-                <li>
-                  <span className="inline-block w-3 h-3 bg-red-500 rounded-full mr-2"></span>
-                  {tStatus("red")}: {tStatus("redDesc")}
-                </li>
-                <li>
-                  <span className="inline-block w-3 h-3 bg-orange-500 rounded-full mr-2"></span>
-                  {tStatus("orange")}: {tStatus("orangeDesc")}
-                </li>
-                <li>
-                  <span className="inline-block w-3 h-3 bg-yellow-500 rounded-full mr-2"></span>
-                  {tStatus("yellow")}: {tStatus("yellowDesc")}
-                </li>
-                <li>
-                  <span className="inline-block w-3 h-3 bg-green-500 rounded-full mr-2"></span>
-                  {tStatus("green")}: {tStatus("greenDesc")}
-                </li>
-                <li>
-                  <span className="inline-block w-3 h-3 bg-blue-500 rounded-full mr-2"></span>
-                  {tStatus("blue")}: {tStatus("blueDesc")}
-                </li>
-              </ul>
-            </section>
-            */}
+            {
+              <section className="mb-8">
+                <h2 className="text-xl font-semibold text-gray-900 mb-4">
+                  {tTransparency("howTag")}
+                </h2>
+                <p className="text-gray-700 leading-relaxed mb-4">
+                  {tTransparency("howTagText")}
+                </p>
+                <ul className="list-disc pl-6 text-gray-700 space-y-2">
+                  <li>
+                    <span className="inline-block w-3 h-3 bg-red-500 rounded-full mr-2"></span>
+                    {tStatus("redDesc")}
+                  </li>
+                  <li>
+                    <span className="inline-block w-3 h-3 bg-orange-500 rounded-full mr-2"></span>
+                    {tStatus("orangeDesc")}
+                  </li>
+                  <li>
+                    <span className="inline-block w-3 h-3 bg-yellow-500 rounded-full mr-2"></span>
+                    {tStatus("yellowDesc")}
+                  </li>
+                  <li>
+                    <span className="inline-block w-3 h-3 bg-green-500 rounded-full mr-2"></span>
+                    {tStatus("greenDesc")}
+                  </li>
+                  <li>
+                    <span className="inline-block w-3 h-3 bg-blue-500 rounded-full mr-2"></span>
+                    {tStatus("blueDesc")}
+                  </li>
+                  <li>
+                    <span className="inline-block w-3 h-3 bg-purple-500 rounded-full mr-2"></span>
+                    {tStatus("purpleDesc")}
+                  </li>
+                  <li>
+                    <span className="inline-block w-3 h-3 bg-gray-500 rounded-full mr-2"></span>
+                    {tStatus("grayDesc")}
+                  </li>
+                </ul>
+              </section>
+            }
 
             <section className="mb-8 hidden">
               <h2 className="text-xl font-semibold text-gray-900 mb-4">

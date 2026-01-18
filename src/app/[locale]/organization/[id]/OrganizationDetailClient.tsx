@@ -49,7 +49,6 @@ export default function OrganizationDetailClient({
   const locale = useLocale() as Locale;
   const [showConfirmModal, setShowConfirmModal] = useState(false);
   const t = useTranslations();
-  const tStatus = useTranslations("status");
 
   const {
     handleDonationClick,
@@ -112,9 +111,9 @@ export default function OrganizationDetailClient({
         <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-8 mb-6">
           <div className="flex flex-wrap items-start justify-between gap-4 mb-6">
             <div className="flex items-start gap-4 min-w-0">
-              {organization.imageUrl && (
+              {organization.imageURL && (
                 <img
-                  src={organization.imageUrl}
+                  src={organization.imageURL}
                   alt={getLocalizedName(organization, locale)}
                   className="w-24 h-16 object-contain rounded-lg flex-shrink-0"
                 />
@@ -141,20 +140,13 @@ export default function OrganizationDetailClient({
                 <p className="text-gray-500">{getLocalizedRegion(organization, locale)}</p>
               </div>
             </div>
-            {organization.status === "gray" && (
-              <div className="flex-shrink-0 whitespace-nowrap">
-                <StatusBadge status={organization.status} size="lg" />
-              </div>
-            )}
+            <div className="flex-shrink-0 whitespace-nowrap">
+              <StatusBadge status={organization.status} size="lg" useDescLabel />
+            </div>
           </div>
 
           <div className="flex flex-wrap gap-2 mb-6">
             <CategoryBadge category={organization.category} />
-            {organization.status === "gray" && (
-              <span className="inline-flex items-center px-3 py-1 bg-gray-100 text-gray-600 rounded-md text-sm">
-                {tStatus(`${organization.status}Desc`)}
-              </span>
-            )}
             {organization.invoiceDonationCode && (
               <InvoiceDonationCodeBadge code={organization.invoiceDonationCode} />
             )}
@@ -251,7 +243,7 @@ export default function OrganizationDetailClient({
                 {donationWindow.isOpen && organization.donationUrl && (
                   <button
                     onClick={handleGoToDonation}
-                    className="px-6 py-3 bg-[#84934A] text-white rounded-lg text-base font-semibold hover:bg-[#68a062] transition-colors shadow-sm"
+                    className="px-6 py-3 bg-[#84934A] text-white rounded-lg text-base font-semibold hover:bg-[#6b7a3b] transition-colors shadow-sm"
                   >
                     {t("common.goToDonationPage")}
                   </button>
@@ -294,6 +286,21 @@ export default function OrganizationDetailClient({
                       <h3 className="text-lg font-medium text-gray-800">
                         {t("organization.donationYear", { year: fundraising.year })} {t("organization.fundraisingIncome")}
                       </h3>
+                      {fundraising.fundActivityUrl && (
+                        <div className="mt-3">
+                          <a
+                            href={fundraising.fundActivityUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-sm text-emerald-600 hover:text-emerald-700 inline-flex items-center gap-1"
+                          >
+                            {t("organization.viewActivity")}
+                            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                            </svg>
+                          </a>
+                        </div>
+                      )}
                     </div>
 
                     <ProgressBar
@@ -316,22 +323,6 @@ export default function OrganizationDetailClient({
                         </p>
                       </div>
                     </div>
-
-                    {fundraising.fundActivityUrl && (
-                      <div className="mt-3">
-                        <a
-                          href={fundraising.fundActivityUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-sm text-emerald-600 hover:text-emerald-700 inline-flex items-center gap-1"
-                        >
-                          {t("organization.viewActivity")}
-                          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                          </svg>
-                        </a>
-                      </div>
-                    )}
                   </div>
                 );
               })}

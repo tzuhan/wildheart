@@ -76,6 +76,8 @@ export function getStatusLabel(status: OrganizationStatus): string {
       return "Stable";
     case "blue":
       return "Well Resourced";
+    case "purple":
+      return "Highly Resourced";
     case "gray":
       return "Unknown Status";
   }
@@ -92,7 +94,9 @@ export function getStatusDescription(status: OrganizationStatus): string {
     case "green":
       return "Annual fundraising between 6-15 million NTD";
     case "blue":
-      return "Annual fundraising over 15 million NTD";
+      return "Annual fundraising between 15-100 million NTD";
+    case "purple":
+      return "Annual fundraising over 100 million NTD";
     case "gray":
       return "Annual fundraising status unknown";
   }

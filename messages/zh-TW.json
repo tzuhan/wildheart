@@ -60,6 +60,7 @@
     "calendarTitle": "勸募開始日期{name}",
     "calendarDetails": "{name} 本年度勸募開始日期",
     "invoiceDonationCode": "電子發票捐贈碼",
+    "copyCode": "點擊複製捐贈碼",
     "incomeTitle": "收入來源",
     "fundraisingIncome": "勸募捐款",
     "fundraisingRaised": "已募金額",
@@ -69,7 +70,7 @@
     "donationAmount": "捐款金額",
     "donationYear": "{year} 年度",
     "viewReport": "查看年度報告",
-    "viewActivity": "查看活動"
+    "viewActivity": "查看勸募活動內容"
   },
   "status": {
     "red": "最緊急",
@@ -77,14 +78,16 @@
     "yellow": "持續需要支持",
     "green": "運作穩定",
     "blue": "資源充足",
+    "purple": "資源豐沛",
     "gray": "狀態未知",
     "unknown": "狀態未知",
-    "redDesc": "去年年度募款金額小於100萬",
-    "orangeDesc": "去年年度募款金額介於100-300萬",
-    "yellowDesc": "去年年度募款金額介於300-600萬",
-    "greenDesc": "去年年度募款金額介於600萬-1500萬",
-    "blueDesc": "去年年度募款金額超過1500萬以上",
-    "grayDesc": "去年年度募款金額狀態未知"
+    "redDesc": "去年度募款金額小於100萬",
+    "orangeDesc": "去年度募款金額介於100-300萬",
+    "yellowDesc": "去年度募款金額介於300-600萬",
+    "greenDesc": "去年度募款金額介於600萬-1500萬",
+    "blueDesc": "去年度募款金額介於1500萬-1億",
+    "purpleDesc": "去年度募款金額超過1億",
+    "grayDesc": "去年度募款金額狀態未公佈"
   },
   "category": {
     "Wildlife Rescue": "野生動物救援",
@@ -102,9 +105,8 @@
     "dataSourceAssoc": "參與協會公開揭露的資訊",
     "dataSourceAnnual": "保育組織的官方年報",
     "dataWarning": "重要提醒：此資料可能無法反映即時捐款狀態。更新頻率取決於公開揭露資料的可得性。",
-    "howRankings": "排名運作方式",
-    "howRankingsText": "排名代表急需支持的程度，而非組織的成效或好壞",
-    "urgencyDetermined": "緊急狀態由以下因素決定：",
+    "howTag": "標籤顏色代表什麼？",
+    "howTagText": "標籤顏色僅表示該組織於去年的募款金額，並不代表其成效或品質。",
     "selfReported": "自我回報的支持確認",
     "selfReportedText": "當您點擊「我已完成支持」時，這是一個自我回報的行為，僅供您個人追蹤使用。我們：",
     "cannotVerify": "無法驗證捐款是否實際完成",
@@ -145,7 +147,7 @@
     "followThreads": "在 Threads 追蹤我"
   },
   "transparencyBanner": {
-    "message": "本平台不處理捐款或追蹤捐款金額。此處顯示的募款數據基於衛生福利部和相關協會的公開揭露報告。以捐款金額和勸募金額排名不代表各個協會的重要性排名，單純提供資訊供贊助者參考。",
+    "message": "本平台不處理或追蹤捐款金額。\n\n募款資料來源分為兩類：一般捐款取自各協會官網或粉絲專頁之公開資訊；勸募捐款來自衛福部公益勸募管理系統。\n\n相關金額排序僅供資訊參考，不代表各協會的重要性或表現。",
     "readMore": "閱讀完整的資訊透明聲明"
   },
   "animation": {
@@ -195,8 +197,16 @@
     "en": "English"
   },
   "highlights": {
-    "title": "每週精選",
+    "title": "協會精選活動",
     "noHighlights": "目前沒有精選內容。",
-    "readMore": "閱讀更多"
+    "readMore": "閱讀更多",
+    "category": {
+      "rescue": "救援",
+      "education": "教育",
+      "fundraising": "募資",
+      "milestone": "里程碑",
+      "policy": "政策",
+      "homepage": ""
+    }
   }
 }

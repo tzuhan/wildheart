@@ -21,9 +21,9 @@ export function TransparencyBanner() {
           </svg>
         </div>
         <div className="ml-3">
-          <p className="text-sm text-blue-700">
-            {t("message")}
-          </p>
+          {t("message").split("\n\n").map((paragraph, index) => (
+            <p key={index} className="text-sm text-blue-700">{paragraph}</p>
+          ))}
           <Link
             href="/about"
             className="text-sm font-medium text-blue-700 hover:text-blue-600 underline mt-1 inline-block"

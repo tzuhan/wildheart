@@ -15,6 +15,7 @@ const progressColors: Record<OrganizationStatus, string> = {
   yellow: "bg-yellow-500",
   green: "bg-green-500",
   blue: "bg-blue-500",
+  purple: "bg-purple-500",
   gray: "bg-gray-500",
 };
 

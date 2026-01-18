@@ -22,43 +22,35 @@ export function HighlightCard({
 
     const handleClick = () => {
         handleWatering();
-        window.open(highlight.sourceUrl, "_blank", "noopener,noreferrer");
+        window.open(highlight.sourceURL, "_blank", "noopener,noreferrer");
     };
-
-    const formattedDate = new Date(highlight.publishedAt).toLocaleDateString(
-        undefined,
-        {
-            year: "numeric",
-            month: "short",
-            day: "numeric",
-        }
-    );
 
     return (
         <div
             onClick={handleClick}
             className="bg-white rounded-xl shadow-sm border border-gray-100 p-4 hover:shadow-md transition-shadow cursor-pointer h-full flex flex-col"
         >
-            <div className="flex justify-between items-start mb-2">
-                <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-[#84934A] text-emerald-800 capitalize">
-                    {highlight.category}
-                </span>
-                <span className="text-xs text-gray-500">{formattedDate}</span>
-            </div>
+            {highlight.category !== "homepage" && (
+                <div className="mb-2">
+                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-[#656D3F] text-white capitalize">
+                        {t(`category.${highlight.category}`)}
+                    </span>
+                </div>
+            )}
 
             <h3 className="font-semibold text-gray-900 mb-2 line-clamp-2">
                 {getLocalizedHighlightTitle(highlight, locale)}
             </h3>
 
             {showOrgName && orgName && (
-                <p className="text-sm text-emerald-600 font-medium mb-2">{orgName}</p>
+                <p className="text-sm text-[#84934A] font-medium mb-2">{orgName}</p>
             )}
 
             <p className="text-sm text-gray-600 line-clamp-3 mb-4 flex-grow">
                 {getLocalizedHighlightSummary(highlight, locale)}
             </p>
 
-            <div className="flex items-center text-sm text-emerald-600 font-medium mt-auto">
+            <div className="flex items-center text-sm text-[#84934A] hover:text-[#6b7a3b] font-medium mt-auto transition-colors">
                 {t("readMore")}
                 <svg
                     className="w-4 h-4 ml-1"

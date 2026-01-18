@@ -2,15 +2,15 @@ import type { Locale } from "./organization";
 
 export interface Highlight {
     id: string;
-    orgId?: string;
+    organizationId?: string;
     titleZh: string;
     titleEn: string;
     summaryZh: string;
     summaryEn: string;
-    sourceUrl: string;
-    publishedAt: string; // ISODateString
+    sourceURL: string;
+    imageURL?: string; // Background image URL
     curatedAt: string; // ISODateString
-    category: "rescue" | "education" | "fundraising" | "milestone" | "policy";
+    category: "rescue" | "education" | "fundraising" | "milestone" | "policy" | "homepage";
     isFeatured: boolean;
 }
 

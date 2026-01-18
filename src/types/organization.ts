@@ -10,7 +10,7 @@ export type OrganizationCategory =
 
 export type UrgencyLevel = 1 | 2 | 3 | 4 | 5;
 
-export type OrganizationStatus = "red" | "orange" | "yellow" | "green" | "blue" | "gray";
+export type OrganizationStatus = "red" | "orange" | "yellow" | "green" | "blue" | "purple" | "gray";
 
 export interface Organization {
   id: string;
@@ -28,7 +28,7 @@ export interface Organization {
   donationUrl: string;
   lastUpdateAt: string; // ISO Date String
   status: OrganizationStatus;
-  imageUrl?: string;
+  imageURL?: string;
   donationStartDate?: string; // MM-DD format (e.g., "02-01" for Feb 1), recurring annually
   donationEndDate?: string; // MM-DD format (e.g., "03-31" for Mar 31), recurring annually
   invoiceDonationCode?: string; // Optional donation code for invoicing purposes

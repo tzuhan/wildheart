@@ -52,11 +52,13 @@ export function OrganizationCard({
             </Link>
             <p className="text-sm text-gray-500 mt-1">{getLocalizedRegion(organization, locale)}</p>
           </div>
-          {organization.status === "gray" && <StatusBadge status={organization.status} />}
+          <StatusBadge status={organization.status} dotOnly={organization.status !== "gray"} />
         </div>
 
         <div className="flex flex-wrap gap-2 mb-4">
-          <CategoryBadge category={organization.category} />
+          {organization.category === "Wildlife Rescue" && (
+            <CategoryBadge category={organization.category} />
+          )}
           {organization.invoiceDonationCode && (
             <InvoiceDonationCodeBadge code={organization.invoiceDonationCode} />
           )}
@@ -99,8 +101,21 @@ export function OrganizationCard({
             {isCurrentYearFundraising && organization.fundraising && progress !== undefined && (
               <div>
                 <div className="flex items-center gap-2 mb-1">
-                  <span className="text-md font-medium text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">
+                  <span className="font-medium text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded inline-flex items-center gap-2">
                     {t("organization.donationYear", { year: organization.fundraising.year })} {t("organization.fundraisingIncome")}
+                    {organization.fundraising.fundActivityUrl && (
+                      <a
+                        href={organization.fundraising.fundActivityUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-emerald-700 hover:text-emerald-800 inline-flex items-center"
+                        title={t("organization.viewActivity")}
+                      >
+                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                      </a>
+                    )}
                   </span>
                 </div>
                 <ProgressBar progress={progress} status={organization.status} />
@@ -131,7 +146,7 @@ export function OrganizationCard({
           {organization.donationUrl && (
             <button
               onClick={handleDonationClick}
-              className="bg-[#84934A] text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
+              className="bg-[#84934A] hover:bg-[#6b7a3b] text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
             >
               {t("common.goToDonationPage")}
             </button>

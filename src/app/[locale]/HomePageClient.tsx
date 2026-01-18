@@ -98,13 +98,41 @@ export default function HomePageClient({
 
       <main className="flex-grow">
         {/* Weekly Highlights Carousel - Hero Section */}
-        <div className="w-full hidden">
-          <HighlightCarousel highlights={featuredHighlights} organizations={rankedOrganizations} />
-        </div>
+        <HighlightCarousel highlights={featuredHighlights} organizations={rankedOrganizations} />
 
         {/* Transparency Banner */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 mt-4 ">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <TransparencyBanner />
+        </div>
+
+        {/* Status Dot Legend - hidden on mobile */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-4 hidden md:block">
+          <div className="flex flex-wrap items-center gap-4 text-sm text-gray-600">
+            <div className="flex items-center gap-1.5">
+              <span className="w-2.5 h-2.5 rounded-full bg-red-500" />
+              <span>{t("status.redDesc")}</span>
+            </div>
+            <div className="flex items-center gap-1.5">
+              <span className="w-2.5 h-2.5 rounded-full bg-orange-500" />
+              <span>{t("status.orangeDesc")}</span>
+            </div>
+            <div className="flex items-center gap-1.5">
+              <span className="w-2.5 h-2.5 rounded-full bg-yellow-500" />
+              <span>{t("status.yellowDesc")}</span>
+            </div>
+            <div className="flex items-center gap-1.5">
+              <span className="w-2.5 h-2.5 rounded-full bg-green-500" />
+              <span>{t("status.greenDesc")}</span>
+            </div>
+            <div className="flex items-center gap-1.5">
+              <span className="w-2.5 h-2.5 rounded-full bg-blue-500" />
+              <span>{t("status.blueDesc")}</span>
+            </div>
+            <div className="flex items-center gap-1.5">
+              <span className="w-2.5 h-2.5 rounded-full bg-purple-500" />
+              <span>{t("status.purpleDesc")}</span>
+            </div>
+          </div>
         </div>
 
         {/* Main Content Grid */}

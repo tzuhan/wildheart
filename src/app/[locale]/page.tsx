@@ -4,14 +4,14 @@ import { rankOrganizations } from "@/lib/ranking";
 import HomePageClient from "./HomePageClient";
 
 export default async function HomePage() {
-  const [organizations, fundraisingData, donationData] = await Promise.all([
+  const [organizations, fundraisingData, donationData, featuredHighlights] = await Promise.all([
     getOrganizations(),
     getFundraisingData(),
     getDonationData(),
+    getFeaturedHighlights(),
   ]);
 
   const rankedOrganizations = rankOrganizations(organizations, fundraisingData, donationData);
-  const featuredHighlights = getFeaturedHighlights();
 
   return (
     <HomePageClient

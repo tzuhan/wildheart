@@ -17,7 +17,7 @@
  * Columns: organizationId, year, targetAmount, raisedAmount, activityNameZh, activityNameEn, fundActivityURL
  *
  * Sheet: "highlights"
- * Columns: id, orgId, titleZh, titleEn, summaryZh, summaryEn, sourceUrl, publishedAt, curatedAt, category, isFeatured
+ * Columns: id, organizationId, titleZh, titleEn, summaryZh, summaryEn, sourceURL, imageURL, curatedAt, category, isFeatured
  */
 
 import {
@@ -98,13 +98,13 @@ interface FundraisingDataRow extends Record<string, string> {
 
 interface HighlightRow extends Record<string, string> {
   id: string;
-  orgId: string;
+  organizationId: string;
   titleZh: string;
   titleEn: string;
   summaryZh: string;
   summaryEn: string;
-  sourceUrl: string;
-  publishedAt: string;
+  sourceURL: string;
+  imageURL: string;
   curatedAt: string;
   category: string;
   isFeatured: string;
@@ -137,7 +137,7 @@ export async function fetchOrganizations(): Promise<Organization[]> {
     donationUrl: row.donationURL,
     lastUpdateAt: row.lastUpdateAt,
     status: row.status as OrganizationStatus,
-    imageUrl: row.imageURL || undefined,
+    imageURL: row.imageURL || undefined,
     donationStartDate: row.donationStartDate || undefined,
     donationEndDate: row.donationEndDate || undefined,
     invoiceDonationCode: row.invoiceDonationCode || undefined,
@@ -202,13 +202,13 @@ export async function fetchHighlights(): Promise<Highlight[]> {
 
   return rows.map((row) => ({
     id: row.id,
-    orgId: row.orgId || undefined,
+    organizationId: row.organizationId || undefined,
     titleZh: row.titleZh,
     titleEn: row.titleEn,
     summaryZh: row.summaryZh,
     summaryEn: row.summaryEn,
-    sourceUrl: row.sourceUrl,
-    publishedAt: row.publishedAt,
+    sourceURL: row.sourceURL,
+    imageURL: row.imageURL || undefined,
     curatedAt: row.curatedAt,
     category: row.category as Highlight["category"],
     isFeatured: parseBoolean(row.isFeatured),
