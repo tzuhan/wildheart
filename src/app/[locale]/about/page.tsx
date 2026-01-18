@@ -170,6 +170,10 @@ export default function AboutPage() {
                   <span className="inline-block w-3 h-3 bg-green-500 rounded-full mr-2"></span>
                   {tStatus("green")}: {tStatus("greenDesc")}
                 </li>
+                <li>
+                  <span className="inline-block w-3 h-3 bg-blue-500 rounded-full mr-2"></span>
+                  {tStatus("blue")}: {tStatus("blueDesc")}
+                </li>
               </ul>
             </section>
 
