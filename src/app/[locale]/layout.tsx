@@ -21,15 +21,17 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Wildlife Conservation Hub - Support Wildlife Organizations",
+  title: "野保報報 WildHeart Bulletin - 台灣野生動物保育捐款資訊平台",
   description:
-    "Discover wildlife organizations that need your support. Find where your contribution can make the biggest impact for conservation efforts.",
+    "發掘急需支持的台灣野生動物保育組織，找出您的捐款能產生最大影響力的地方。整理各野保團體募款資訊，讓支持野保變得更清楚、更容易。",
   keywords: [
-    "wildlife conservation",
-    "donation",
-    "wildlife rescue",
-    "habitat protection",
-    "endangered species",
+    "台灣野生動物保育",
+    "野生動物捐款",
+    "野生動物救援",
+    "棲地保護",
+    "瀕危物種",
+    "wildlife conservation Taiwan",
+    "wildlife donation",
   ],
 };
 

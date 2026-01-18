@@ -141,14 +141,16 @@ export default function OrganizationDetailClient({
                 <p className="text-gray-500">{getLocalizedRegion(organization, locale)}</p>
               </div>
             </div>
-            <div className="flex-shrink-0 whitespace-nowrap">
-              <StatusBadge status={organization.status} size="lg" />
-            </div>
+            {organization.status === "gray" && (
+              <div className="flex-shrink-0 whitespace-nowrap">
+                <StatusBadge status={organization.status} size="lg" />
+              </div>
+            )}
           </div>
 
           <div className="flex flex-wrap gap-2 mb-6">
             <CategoryBadge category={organization.category} />
-            {organization.status && (
+            {organization.status === "gray" && (
               <span className="inline-flex items-center px-3 py-1 bg-gray-100 text-gray-600 rounded-md text-sm">
                 {tStatus(`${organization.status}Desc`)}
               </span>

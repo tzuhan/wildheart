@@ -52,7 +52,7 @@ export function OrganizationCard({
             </Link>
             <p className="text-sm text-gray-500 mt-1">{getLocalizedRegion(organization, locale)}</p>
           </div>
-          <StatusBadge status={organization.status} />
+          {organization.status === "gray" && <StatusBadge status={organization.status} />}
         </div>
 
         <div className="flex flex-wrap gap-2 mb-4">

@@ -13,7 +13,6 @@ export default function AboutPage() {
   const tCommon = useTranslations("common");
   const tCategory = useTranslations("category");
   const tTransparency = useTranslations("transparency");
-  const tStatus = useTranslations("status");
 
   return (
     <div className="min-h-screen bg-gray-50 py-12">
@@ -143,6 +142,7 @@ export default function AboutPage() {
               </div>
             </section>
 
+            {/* Urgency ranking explanation - hidden
             <section className="mb-8">
               <h2 className="text-xl font-semibold text-gray-900 mb-4">
                 {tTransparency("howRankings")}
@@ -176,8 +176,9 @@ export default function AboutPage() {
                 </li>
               </ul>
             </section>
+            */}
 
-            <section className="mb-8">
+            <section className="mb-8 hidden">
               <h2 className="text-xl font-semibold text-gray-900 mb-4">
                 {tTransparency("selfReported")}
               </h2>

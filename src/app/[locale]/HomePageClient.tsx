@@ -27,7 +27,7 @@ export default function HomePageClient({
   // Temporarily disabled - const [selectedStatus, setSelectedStatus] = useState<OrganizationStatus | "all">("all");
   const selectedStatus: OrganizationStatus | "all" = "all";
   const [searchQuery, setSearchQuery] = useState("");
-  const [sortMethod, setSortMethod] = useState<"urgency" | "donation_low" | "donation_high">("urgency");
+  const [sortMethod, setSortMethod] = useState<"urgency" | "donation_low" | "donation_high">("donation_low");
 
   const {
     handleDonationClick,
@@ -155,7 +155,7 @@ export default function HomePageClient({
                     onChange={(e) => setSortMethod(e.target.value as "urgency" | "donation_low" | "donation_high")}
                     className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent bg-white"
                   >
-                    <option value="urgency">{t("home.sortByUrgency")}</option>
+                    {/* <option value="urgency">{t("home.sortByUrgency")}</option> */}
                     <option value="donation_low">{t("home.sortByDonationLow")}</option>
                     <option value="donation_high">{t("home.sortByDonationHigh")}</option>
                   </select>
