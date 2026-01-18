@@ -58,6 +58,13 @@ function buildCspHeader(): string {
 }
 
 export default function proxy(request: NextRequest) {
+  const { pathname } = request.nextUrl;
+
+  // Skip middleware for static files in public folder
+  if (pathname.match(/\.(txt|xml|ico|png|jpg|jpeg|gif|svg|webp|json)$/)) {
+    return NextResponse.next();
+  }
+
   // Run the intl middleware first
   const response = intlMiddleware(request);
 
@@ -80,7 +87,7 @@ export default function proxy(request: NextRequest) {
 export const config = {
   // Match all pathnames except for
   // - API routes
-  // - Static files (e.g. /images/*)
   // - Next.js internals
-  matcher: ["/((?!api|_next|_vercel|.*\\..*).*)"],
+  // Note: We handle static file exclusion in the proxy function itself
+  matcher: ["/((?!api|_next|_vercel).*)"],
 };
