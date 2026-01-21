@@ -23,11 +23,6 @@ export function Footer() {
             </h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/" className="hover:text-white transition-colors">
-                  {t("common.viewOrganizations")}
-                </Link>
-              </li>
-              <li>
                 <Link
                   href="/about"
                   className="hover:text-white transition-colors"

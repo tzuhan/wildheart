@@ -102,7 +102,7 @@
     "dataSources": "募款資料來源",
     "dataSourcesText": "本平台顯示的募款數據來自：",
     "dataSourceMOHW": "衛生福利部（MOHW）公開揭露的報告",
-    "dataSourceAssoc": "參與協會公開揭露的資訊",
+    "dataSourceAssoc": "各協會於官網、粉絲頁公開揭露的資訊",
     "dataSourceAnnual": "保育組織的官方年報",
     "dataWarning": "重要提醒：此資料可能無法反映即時捐款狀態。更新頻率取決於公開揭露資料的可得性。",
     "howTag": "標籤顏色代表什麼？",
@@ -184,7 +184,7 @@
     "importantNotice": "重要聲明",
     "importantNoticeText": "本平台不處理捐款或追蹤捐款金額。所有捐款都由各組織通過其自己的網站直接處理。",
     "dataDisclaimer": "募款資料基於衛生福利部和參與組織的公開揭露報告。",
-    "copyright": "© {year} 野生動物保育中心。僅供宣傳用途。"
+    "copyright": "© {year} 野保報報。僅供宣傳用途。"
   },
   "progressBar": {
     "defaultLabel": "公開募款進度",
