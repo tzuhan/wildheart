@@ -33,6 +33,28 @@ export const metadata: Metadata = {
     "wildlife conservation Taiwan",
     "wildlife donation",
   ],
+  openGraph: {
+    title: "野保報報 WildHeart Bulletin - 台灣野生動物保育捐款資訊平台",
+    description:
+      "發掘急需支持的台灣野生動物保育組織，找出您的捐款能產生最大影響力的地方。整理各野保團體募款資訊，讓支持野保變得更清楚、更容易。",
+    images: [
+      {
+        url: "/banner-bg.jpg",
+        width: 1200,
+        height: 630,
+        alt: "野保報報 WildHeart Bulletin",
+      },
+    ],
+    type: "website",
+    locale: "zh_TW",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "野保報報 WildHeart Bulletin - 台灣野生動物保育捐款資訊平台",
+    description:
+      "發掘急需支持的台灣野生動物保育組織，找出您的捐款能產生最大影響力的地方。",
+    images: ["/banner-bg.jpg"],
+  },
 };
 
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || "";
